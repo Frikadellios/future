@@ -1,0 +1,33 @@
+---
+import BaseHead from '@/components/BaseHead.astro'
+import ProviderAnimations from '@/components/layout/provider-animations.astro'
+import TailwindIndicator from '@/components/layout/tailwind-indicator.astro'
+import { cn } from '@/lib/utils'
+import '@/styles/tailwind.css'
+import ClientRouter from 'astro/components/ClientRouter.astro'
+
+type Props = {
+  title: string
+  description?: string
+  lang?: string
+  mainClass?: string
+  bodyClass?: string
+}
+
+const { title, description, mainClass, bodyClass } = Astro.props as Props
+---
+
+<!doctype html>
+<html lang='en' class="bg-background text-foreground scroll-smooth">
+	<head>
+        <BaseHead title={title} description={description || ''} />
+		    <ProviderAnimations />
+        <ClientRouter />
+	</head>
+	<body class={cn('flex bg-background text-foreground flex-col antialiased min-h-screen', bodyClass)}>
+			<main class={cn(mainClass)}>
+				<slot />
+				<TailwindIndicator />
+      </main>
+	</body>
+</html>

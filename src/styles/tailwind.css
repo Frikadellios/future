@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+}
+
+@property --tw-outline-style {
+  syntax: "<custom-ident>";
+  inherits: false;
+  initial-value: solid;
+}
+
+@layer base {
+  :root[data-theme="dark"] {
+    --background: 283 47% 2%;
+    --foreground: 283 27% 98%;
+    --muted: 283 13% 8%;
+    --muted-foreground: 283 4% 63%;
+    --popover: 283 47% 2%;
+    --popover-foreground: 283 27% 98%;
+    --card: 283 47% 3%;
+    --card-foreground: 283 27% 99%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --primary: 283 93% 25%;
+    --primary-foreground: 283 93% 85%;
+    --secondary: 283 18% 12%;
+    --secondary-foreground: 283 18% 72%;
+    --accent: 283 25% 17%;
+    --accent-foreground: 283 25% 77%;
+    --destructive: 4 84% 49%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 283 93% 25%;
+  }
+
+  :root[data-theme="light"] {
+    --background: 283 36% 98%;
+    --foreground: 283 68% 2%;
+    --muted: 283 13% 92%;
+    --muted-foreground: 283 4% 37%;
+    --popover: 283 36% 98%;
+    --popover-foreground: 283 68% 2%;
+    --card: 283 36% 97%;
+    --card-foreground: 283 68% 1%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --primary: 283 93% 25%;
+    --primary-foreground: 283 93% 85%;
+    --secondary: 283 7% 90%;
+    --secondary-foreground: 283 7% 30%;
+    --accent: 283 15% 81%;
+    --accent-foreground: 283 15% 21%;
+    --destructive: 4 84% 36%;
+    --destructive-foreground: 4 84% 96%;
+    --ring: 283 93% 25%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  .border {
+    border-color: oklch(35.6% 0.174 312.18 / 25%);
+  }
+
+  body {
+    transition: background-color 0.5s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: "Inter", sans-serif;
+    background-color: var(--background);
+    font-style: var(--foreground);
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("../assets/fonts/inter.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    font-size: var(--font-size-base);
+  }
+
+  img {
+    content-visibility: auto;
+  }
+}

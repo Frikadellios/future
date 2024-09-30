@@ -1,0 +1,85 @@
+{
+  "name": "future",
+  "type": "module",
+  "packageManager": "bun@1.1.26",
+  "private": true,
+  "keywords": [
+    "template",
+    "biomejs",
+    "bun",
+    "typescript",
+    "tailwindcss",
+    "astrojs",
+    "cloudflare",
+    "react",
+    "framer-motion",
+    "shadcn"
+  ],
+  "author": "Hrihorii Ilin <devopsick@pm.me>",
+  "license": "MIT",
+  "description": "Gift from the future, or I am from Ukraine :D",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Frikadellios/future.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Frikadellios/future/issues"
+  },
+  "homepage": "https://github.com/Frikadellios/future/readme",
+  "engines": {
+    "node": ">=18.19.1 <19 || >=20.17.0 <21 || >=21.1.0"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-checker -exclude \"**/node_modules/**\"",
+    "browserslist": "bunx update-browserslist-db@latest",
+    "build": "bun astro check --verbose && bunx --bun astro build --verbose",
+    "dev": "bunx --bun astro dev --verbose",
+    "start": "bun astro check --verbose && bunx --bun astro dev --verbose",
+    "lint": "conc bun:lint:*",
+    "lint:format": "bunx @biomejs/biome format . --write",
+    "lint:fix": "bunx @biomejs/biome check . --fix",
+    "lint:check": "bunx @biomejs/biome check ./* --write --unsafe"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.2",
+    "@csstools/postcss-oklab-function": "^4.0.2",
+    "@types/bun": "latest",
+    "@types/mdx": "latest",
+    "@types/node": "latest",
+    "@types/web": "latest",
+    "autoprefixer": "^10.4.20",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "editorconfig-checker": "^6.0.0",
+    "postcss": "^8.4.47",
+    "postcss-discard-comments": "^7.0.3",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss": "^3.4.13",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "peerDependencies": {
+    "typescript": "latest",
+    "bun-devtools": "latest",
+    "bun-types": "latest"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.1",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
+    "astro": "5.0.0-beta.2",
+    "concurrently": "^9.0.1",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^11.9.0",
+    "react": "19.0.0-rc-2d16326d-20240930",
+    "react-dom": "19.0.0-rc-2d16326d-20240930",
+    "reading-time": "^1.5.0",
+    "sharp": "^0.33.5"
+  },
+  "trustedDependencies": ["@biomejs/biome", "esbuild", "sharp"]
+}
