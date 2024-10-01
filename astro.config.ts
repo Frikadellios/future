@@ -12,6 +12,7 @@ import cloudflare from '@astrojs/cloudflare'
 import * as path from 'node:path'
 import { defineConfig, passthroughImageService, sharpImageService } from 'astro/config'
 import { loadEnv } from 'vite'
+import vercel from '@astrojs/vercel/serverless';
 const ENV = loadEnv(process.env.NODE_ENV ?? 'production', process.cwd(), '')
 const IS_PRODUCTION = ENV.NODE_ENV === 'production'
 
@@ -32,12 +33,7 @@ export default defineConfig({
   },
   integrations: [react()],
   output: 'server',
-  adapter: cloudflare({
-    imageService: 'cloudflare',
-    platformProxy: {
-      enabled: true
-    }
-  }),
+  adapter: vercel(),
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'viewport'

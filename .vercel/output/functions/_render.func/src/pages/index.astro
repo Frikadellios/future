@@ -1,0 +1,23 @@
+---
+
+import SparklesGlobe from '@/components/SparklesGlobe.astro'
+import TrustedByExperts from '@/components/TrustedByExperts.astro'
+import Container from '@/components/layout/container.astro'
+import { ShootingStars } from '@/components/layout/shooting-stars'
+import { StarsBackground } from '@/components/layout/stars-background'
+import SpotlightCard from '@/components/SpotlightCard.astro'
+import Layout from '@/layouts/Layout.astro'
+import Photo from '@/components/Photo.astro'
+---
+
+<Layout title="Homepage of Future" description=" I come here to show you my Skill-xd" lang="en">
+  <Container >
+    <ShootingStars client:load />
+    <StarsBackground client:load />
+  
+  <SparklesGlobe />
+  <SpotlightCard />
+  <Photo />
+  <TrustedByExperts />
+  </Container>
+</Layout>
