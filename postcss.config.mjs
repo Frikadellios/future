@@ -4,7 +4,6 @@ const config = {
     tailwindcss: {},
     '@tailwindcss/postcss': {},
     autoprefixer: {},
-    'postcss-import': {},
     '@csstools/postcss-oklab-function': { preserve: true },
     'postcss-preset-env': {
       features: { 'nesting-rules': false }
