@@ -28,7 +28,7 @@ export default defineConfig({
     }
   },
   security: {
-    checkOrigin: false
+    checkOrigin: true
   },
   integrations: [react()],
   output: 'server',
