@@ -1,0 +1,39 @@
+---
+interface Props {
+  href: string
+  size?: 'md' | 'lg'
+  block?: boolean
+  style?: 'outline' | 'primary' | 'inverted' | 'muted' | 'nohover'
+  class?: string
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  [x: string]: any
+}
+const { href, block, size = 'lg', style = 'primary', class: className, ...rest } = Astro.props
+const sizes = {
+  lg: 'px-5 py-2.5',
+  md: 'px-4 py-2'
+}
+const styles = {
+  outline: 'bg-white border-2 border-black hover:bg-gray-100 text-black ',
+  primary:
+    'bg-blues-500 text-yellows-600 dark:text-blues-500 font-bold font-sans hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-blues-500 transition hover:rotate-2 hover:scale-110 border-2 border-transparent dark:bg-yellows-600',
+  inverted:
+    'inline-block hover:text-blues-600 text-yellows-600 dark:hover:text-blues-600 dark:text-blues-600 transition-all duration-200 text-yellows-600 hover:text-blues-600 dark:text-blues-600 hover:dark:text-yellows-600 bg-blues-600 hover:bg-yellows-600 dark:bg-yellows-600 hover:dark:bg-blues-600 dark:hover:text-yellows-600 font-bold transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring hover:animate-wiggle hover:animate-infinite hover:animate-duration-[1500ms] hover:animate-ease-linear hover:animate-normal hover:animate-fill-backwards hover:scale-110 hover:drop-shadow-2xl focus:outline-none focus:ring hover:shadow-blues-600 dark:shadow-yellows-600',
+  muted: 'font-bold text-blues-500 hover:text-color dark:text-yellows-500 dark:hover:text-color',
+  nohover:
+    'inline-block transition-all duration-200 body-large bg-trancperent font-bold transition hover:scale-110 hover:drop-shadow-2xl border-2 border-blues-600 dark:border-yellows-600 focus:outline-none focus:ring  hover:scale-110 hover:drop-shadow-2xl focus:outline-none focus:ring'
+}
+---
+
+<a
+  href={href}
+  {...rest}
+  class:list={[
+    "rounded text-center transition focus-visible:ring-2 ring-offset-2 ring-gray-200",
+    block && "w-full",
+    sizes[size],
+    styles[style],
+    className,
+  ]}
+  ><slot />
+</a>

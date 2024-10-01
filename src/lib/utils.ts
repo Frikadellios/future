@@ -7,7 +7,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-
 export function readingTime(html: string) {
   const textOnly = html.replace(/<[^>]+>/g, '')
   const wordCount = textOnly.split(/\s+/).length
@@ -22,7 +21,6 @@ export function calculateReadingTime(text: string): string {
   const readTime = Math.ceil(minutes)
   return `${readTime}`
 }
-
 
 export function formatDate(date: Date) {
   return format(date, 'LLL dd, y')
