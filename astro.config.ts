@@ -35,7 +35,7 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: 'cloudflare',
     platformProxy: {
-      enabled: true
+      enabled: false
     }
   }),
   prefetch: {
